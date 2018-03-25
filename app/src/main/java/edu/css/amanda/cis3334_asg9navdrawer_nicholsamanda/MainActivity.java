@@ -31,9 +31,13 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Send an Email to your Study Partner", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                // email icon will create an intent to send an email
+                // use sendto and mailto
+                // lists email-specific mobile apps
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
                 emailIntent.setData(Uri.parse("mailto: anichols1@css.edu"));
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Hey Study Partner");
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Hey There Study Partner");
                 if (emailIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(emailIntent);
                 }
@@ -75,7 +79,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings) { // view settings from action bar menu; new activity
             Intent settingsIntent = ( new Intent(this, SettingsActivity.class));
             startActivity(settingsIntent);
             return true;
@@ -90,29 +94,29 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_add) {
+        if (id == R.id.nav_add) { // add a mate from nav drawer menu
             Snackbar.make(getWindow().getDecorView(), "adding study mates is not available yet", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
             return true;
-        } else if (id == R.id.nav_delete) {
+        } else if (id == R.id.nav_delete) { // delete a mate from nav drawer menu
             Snackbar.make(getWindow().getDecorView(), "deleting a study mate is not available yet", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
             return true;
-        } else if (id == R.id.nav_settings) {
+        } else if (id == R.id.nav_settings) { // view settings from nav drawer menu; open new activity
             Intent settingsIntent = ( new Intent(this, SettingsActivity.class));
             startActivity(settingsIntent);
             return true;
-        } else if (id == R.id.nav_email) {
+        } else if (id == R.id.nav_email) { // send email to a mate from nav drawer menu
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-            emailIntent.setData(Uri.parse("mailto: anichols1@css.edu"));
+            emailIntent.setData(Uri.parse("mailto: anichols1@css.edu")); // my email address
             emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Hey Study Partner");
             if (emailIntent.resolveActivity(getPackageManager()) != null) {
                 startActivity(emailIntent);
             }
             return true;
-        } else if (id == R.id.nav_sms) {
+        } else if (id == R.id.nav_sms) { // sent sms to a mate from nav drawer menu
             Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
-            smsIntent.setData(Uri.parse("smsto: 2183307482"));
+            smsIntent.setData(Uri.parse("smsto: 2183307482")); // my phone number
             smsIntent.putExtra("sms_body", "Hello Study Partner");
             if (smsIntent.resolveActivity(getPackageManager()) != null) {
                 startActivity(smsIntent);
