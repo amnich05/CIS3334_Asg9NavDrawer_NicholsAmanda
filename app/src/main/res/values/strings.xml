@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">The Ultimate Study App</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="nav_add">Add a Mate</string>
+    <string name="nav_delete">Delete a Mate</string>
+    <string name="nav_settings">View Settings</string>
+    <string name="nav_email">Email a Mate</string>
+    <string name="nav_sms">Text a Mate</string>
+    <string name="title_activity_settings">Viewing Settings</string>
+    <string name="textView_slogan">Because \"studying\" doesn\'t have to mean \"students dying\"</string>
+</resources>
